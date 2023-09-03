@@ -5,6 +5,8 @@
       "label": "C/C++: g++ build active file",
       "command": "/usr/bin/g++",
       "args": [
+        "-I/Library/Frameworks/Python.framework/Versions/3.10/include/python3.10",
+
         "-std=\"c++2a\"",
         "-fdiagnostics-color=always",
         "-g",

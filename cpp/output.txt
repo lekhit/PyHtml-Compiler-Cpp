@@ -1,14 +1,21 @@
+<html>
+<head>
+<title>
           SImpLE
 <\title>
-
-<title>
 <meta>
           hello world
-        daf
+          daf
 <\meta>
-
+<\head>
+<body>
+<div class="hello">
           this and that
+          adf
+          af
 <\div>
-
-<\html> <\head> <\body> <\script> 
-<html> <head> <body> <div class="hello"> <script>             alert("this is useless alert") 
+<script>
+            alert("this is useless alert")
+<\script>
+<\body>
+<\html>

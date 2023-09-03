@@ -3,6 +3,9 @@
     "istream": "cpp",
     "stack": "cpp",
     "random": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "iostream": "cpp",
+    "list": "cpp",
+    "fstream": "cpp"
   }
 }

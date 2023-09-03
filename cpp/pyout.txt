@@ -1,0 +1,30 @@
+div class=0:
+    hello world
+    
+div class=1:
+    hello world
+    
+div class=2:
+    hello world
+    
+div class=3:
+    hello world
+    
+div class=4:
+    hello world
+    
+div class=5:
+    hello world
+    
+div class=6:
+    hello world
+    
+div class=7:
+    hello world
+    
+div class=8:
+    hello world
+    
+div class=9:
+    hello world
+    

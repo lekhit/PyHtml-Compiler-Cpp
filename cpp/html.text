@@ -4,10 +4,17 @@ html:
           SImpLE
         meta:
           hello world
-        daf
+          daf
 
     body:
         div class="hello":
           this and that
+          adf
+          af
+        python:
+          for i in range(10):
+              print(f"""div class={i}:
+              hello world
+              """)
         script:
             alert("this is useless alert")
