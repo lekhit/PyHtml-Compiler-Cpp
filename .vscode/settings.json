@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "istream": "cpp",
+    "stack": "cpp",
+    "random": "cpp",
+    "vector": "cpp"
+  }
+}

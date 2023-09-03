@@ -1,0 +1,13 @@
+html:
+    head:
+        title:
+          SImpLE
+        meta:
+          hello world
+        daf
+
+    body:
+        div class="hello":
+          this and that
+        script:
+            alert("this is useless alert")

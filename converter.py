@@ -71,7 +71,7 @@ lt=myfile.readlines()
 lt=blanklineremover(lt)
 d={}
 for line in lt:
-    d.update(finder1(line,lt))
+    d.update(finder(line,lt))
 for j1 in d:
     lt.insert(j1,d.get(j1))
 print("final")

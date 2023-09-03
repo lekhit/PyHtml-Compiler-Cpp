@@ -83,7 +83,7 @@ ltr=lt
 
 for line in lt:
     n=countspaces(line)
-    s=line
+    s=line.lstrip()
     
     if line.rstrip().endswith(":"):
         
@@ -91,12 +91,12 @@ for line in lt:
             s=spacestring(n)+"</"+s[:nameindex(s)]+">"
             s1=spacestring(n)+"<"+s[:nameindex(s)]+">"
             index=lt.index(line)
-            lt[lt.index(line)]=spacestring(n)+"<"+line.replace(":",">")
+            lt[lt.index(line)]=spacestring(n)+"<"+line.replace(":",">").lstrip()
             inserted=False        
             
             for i in range(index+1,len(lt)):
                 if countspaces(lt[i])<n+4:
-                    lt[index]=spacestring(n)+"<"+line.replace(":",">")
+                    lt[index]=spacestring(n)+"<"+line.replace(":",">").lstrip()
                     lt.insert(i,s)
                     inserted=True
                     break
