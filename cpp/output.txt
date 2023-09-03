@@ -1,3 +1,64 @@
+python not readable
+         
+                       div class=0:
+                           hello world
+                                 div class=1:
+                                     hi hello world
+             
+         
+                       div class=1:
+                           hello world
+                                 div class=2:
+                                     hi hello world
+             
+         
+                       div class=2:
+                           hello world
+                                 div class=3:
+                                     hi hello world
+             
+         
+                       div class=3:
+                           hello world
+                                 div class=4:
+                                     hi hello world
+             
+         
+                       div class=4:
+                           hello world
+                                 div class=5:
+                                     hi hello world
+             
+         
+                       div class=5:
+                           hello world
+                                 div class=6:
+                                     hi hello world
+             
+         
+                       div class=6:
+                           hello world
+                                 div class=7:
+                                     hi hello world
+             
+         
+                       div class=7:
+                           hello world
+                                 div class=8:
+                                     hi hello world
+             
+         
+                       div class=8:
+                           hello world
+                                 div class=9:
+                                     hi hello world
+             
+         
+                       div class=9:
+                           hello world
+                                 div class=10:
+                                     hi hello world
+             
 <html>
 <head>
 <title>
@@ -13,6 +74,86 @@
           this and that
           adf
           af
+         
+<div class=0>
+                           hello world
+<div class=1>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=1>
+                           hello world
+<div class=2>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=2>
+                           hello world
+<div class=3>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=3>
+                           hello world
+<div class=4>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=4>
+                           hello world
+<div class=5>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=5>
+                           hello world
+<div class=6>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=6>
+                           hello world
+<div class=7>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=7>
+                           hello world
+<div class=8>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=8>
+                           hello world
+<div class=9>
+                                     hi hello world
+             
+         
+<\div>
+<\div>
+<div class=9>
+                           hello world
+<div class=10>
+                                     hi hello world
+             
+<\div>
+<\div>
 <\div>
 <script>
             alert("this is useless alert")

@@ -145,12 +145,14 @@ string processIndentaionPython(string s,int pycount){
 
 void processPythonFILE(list<string>::iterator &it,list<string> &input, int pycount){
 ifstream inputfile("pyout.txt");
+cout<<"python not readable"<<endl;
 int cnt=0;
   string s;
   while(getline(inputfile,s)){
     string ans=(processIndentaionPython(s,pycount));
     input.insert(it,ans);
     cnt++;
+    cout<<ans<<endl;
   }
   advance(it,cnt*-1);
   inputfile.close();
@@ -184,6 +186,7 @@ if(CheckTAG(s)!=-1){
         makePYrunFILE(pyLines,pyindent);
       if(runPY()==0){
         // successful execution of python file
+        processPythonFILE(it,input,pyCount);
 
       }
       }

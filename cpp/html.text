@@ -13,8 +13,11 @@ html:
           af
         python:
           for i in range(10):
-              print(f"""div class={i}:
-              hello world
+              print(f"""
+                        div class={i}:
+                            hello world
+                                  div class={i+1}:
+                                      hi hello world
               """)
         script:
             alert("this is useless alert")
