@@ -1,7 +1,10 @@
+
 html:
     head:
+        something()
         title:
             print("SImpLE")
+        
     body:
         div:
             print("this and that")

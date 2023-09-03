@@ -1,12 +1,10 @@
 html:
     head:
         title:
-            print("SImpLE")
+            "SImpLE"
     body:
-        div:
-            print("this and that")
-            for i in range(12):
-                print(f'<div name="div{i}">{i}</div>')
+        div class="hello":
+            "this and that"
         script:
             alert("this is useless alert")
         

@@ -17,7 +17,7 @@ def blanklineremover(lt):
     return (lt)
 
 def notknown(line):
-    known=["if","for","while","print"]
+    known=["if","for","while","print","def","return","$e","$eh"]
     for v in known:
             if (line.lstrip()).startswith(v):
                 return False
@@ -68,6 +68,31 @@ def nameindex(s):
     else: return s.find(':')
 
 
+def blockendindex(startindex ,lines):
+    total= len(lines)
+    index=startindex
+    initalspaces=countspaces(lines[startindex])
+    for i in range(startindex+1,total):
+        if countspaces(lines[i])>initalspaces:
+            index+=1
+    return index
+            
+def eh(startindex,lt):
+    
+  i=startindex
+  e=[]
+  re=[]
+  e.append(lt[startindex].replace("$eh","def"))
+  for j in range(i+1,len(lt)):    
+    line=lt[j]
+    if (line.strip()).endswith("/h"):
+      break
+    if notknown(line):
+      e.append(f"print('{line}')")
+  re=[e,j]
+  return re
+    
+
 """line="html:"
 lt=[line,"    div:","    this ant athath"]
 lt=finder(line,lt)
@@ -75,7 +100,7 @@ print(lt)
 """
 
 myfile=open("html.txt")
-myfile=open(input("enter file name in .txt format to convert:"))
+#myfile=open(input("enter file name in .txt format to convert:"))
 lt=myfile.readlines()
 lt=blanklineremover(lt)
 
@@ -102,9 +127,12 @@ for line in lt:
                     break
             if not inserted:
                 lt.insert(len(lt),s)
+        
 
+for i in range(0,len(lt)):
+    line=lt[i]
+    line=line.replace("\n","")
 
-for line in lt:
     if notknown(line):
         spaces=countspaces(line)
         index=lt.index(line)
@@ -113,25 +141,62 @@ for line in lt:
         line=line.replace("\n","")
         lt[index]=f'print(\'{line}\')'
     else:
-        lt[lt.index(line)]=line[spaces+4:]
         
+        if line.rstrip().startswith("$e") :
+            re=eh(i,lt)
+            for k in range(i,re[1]):
+                for line in re[0]:
+                    lt[k]=line
+            
+            
+        if line.rstrip().endswith(":"):
+            spaces=countspaces(line)
+            
+            
+            endindex=blockendindex(i,lt)
+            for j in range(i,endindex):
+                line=lt[j]
+                lt[j]=line[spaces:]
+            i=endindex
+        
+
+    
+def delist(lt):
+	e=[]
+	for item in lt:
+		if type(item) is list:
+			for i in item:
+				e.append(i)
+			delist(e)
+		else:
+			e.append(item)
+	return e
+                 
+                 
+                 
+runfile = open("runfile.py","w")
+
+        
+for line in lt:
+    runfile.write(line+"")
+runfile.close()
 
 f = open("test.py","w")
 
-f.write("lt=[]\n")
+f.write("e=[]\n")
         
 for line in lt:
     line1=line
     f.write(line+"\n")
     if "print" in line1:
-        line1=line1.replace("print",'lt.append')
+        line1=line1.replace("print",'e.append')
         f.write(line1+"\n")
     
 
 
 
 f.write('\nhtmlfile=open("htmlfinal.html","w")')
-f.write('\nfor line in lt:')
+f.write('\nfor line in e:\n')
 f.write('    htmlfile.write(line)\n')
 f.write('htmlfile.close()')
 

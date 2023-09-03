@@ -73,12 +73,13 @@ lt=[line,"    div:","    this ant athath"]
 lt=finder(line,lt)
 print(lt)
 """
-myfile=open("html.txt")
+
+myfile=open("html.py")
 lt=myfile.readlines()
 lt=blanklineremover(lt)
 
 ltr=lt
-
+lt=list(map(lambda item:item.replace('\n',''),lt))
 for line in lt:
     n=countspaces(line)
     s=line.lstrip()
@@ -101,17 +102,17 @@ for line in lt:
             if not inserted:
                 lt.insert(len(lt),s)
 
-
+print(lt)
 for line in lt:
     if notknown(line):
         spaces=countspaces(line)
         line=line.replace('"','\"')
         line=line.replace("'","\'")
-        lt[lt.index(line)]=f'print("""{line}""")'
+        lt[lt.index(line)]=f'print(\'{line}\')'
     else:
-        lt[lt.index(line)]=line[spaces+4:]
+        lt[lt.index(line)]=line[spaces:]
         
-        
+print(lt)        
 for line in lt:
     print(line)
     
@@ -144,6 +145,7 @@ f.write('htmlfile.close()')
 
 f.close()
 exec(open("./test.py").read())
+
 import os
 os.system('open htmlfinal.html')
 
