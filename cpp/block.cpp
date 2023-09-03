@@ -87,7 +87,9 @@ int runPY(){
   return returnValue;
 }
 
-void processString(string s,int count,list<pair<string,int>> &lt,list<pair<string,int>>::iterator &it){
+void processString(list<string>::iterator itr, list<pair<string,int>> &lt,list<pair<string,int>>::iterator &it){
+  string s=(*itr);
+ int  count=getLeftCount(s);
   if(CheckTAG(s)!=-1){
         //means we are deaing with tag
         auto startTag=addPadding( getCompleteStartTag(s));
@@ -132,9 +134,32 @@ for(auto i:v) {myfile<<GetPyIndentaion(i,pyindent)<<endl;}
 myfile<<"\nsys.stdout = original_stdout\noutput_file.close()";
 myfile.close();
 }
+string processIndentaionPython(string s,int pycount){
+  string ans="";
+  for(int i=0;i<=pycount;i++){
+    ans+=" ";
+  }
+  ans+=s;
+  return ans;
+}
 
-string processPythonString(list<string>::iterator &it,list<string> input, int count){
+void processPythonFILE(list<string>::iterator &it,list<string> &input, int pycount){
+ifstream inputfile("pyout.txt");
+int cnt=0;
+  string s;
+  while(getline(inputfile,s)){
+    string ans=(processIndentaionPython(s,pycount));
+    input.insert(it,ans);
+    cnt++;
+  }
+  advance(it,cnt*-1);
+  inputfile.close();
+}
+
+
+string processPythonString(list<string>::iterator &it,list<string> &input){
   string s=(*it);
+  int count=getLeftCount(s);
 vector<string> pyLines;
       string py=getTAG(s);
       int pyCount=count;
@@ -144,18 +169,21 @@ if(CheckTAG(s)!=-1){
       if(py=="python"){
        
         //cout<<py;
-        getline(cin,py);
+        // getline(cin,py);
+        ++it;
+        py=(*it);
         do{
         count=getLeftCount(py);
         pyindent=min(count,pyindent);
         pyLines.push_back(py);
-        getline(cin,py);
+       ++it;
+       py=(*it);
         count=getLeftCount(py);
         }while((count>pyCount));
         s=py;// giving the last line for further processing;
         makePYrunFILE(pyLines,pyindent);
       if(runPY()==0){
-        // successful execution of pythonfile
+        // successful execution of python file
 
       }
       }
@@ -184,14 +212,14 @@ int main(){
     input.push_back(s);
   }
 
-for(auto it=input.begin();it!=input.end();it++){
-  string s=(*it);
+for(auto itr=input.begin();itr!=input.end();itr++){
+  string s=(*itr);
     if(LEN(s)==0) continue;
-    count=getLeftCount(s);// getting indentaion count
-    s=sanitizeLine(s);
+    // getting indentaion count
+    //s=sanitizeLine(s);
     //printf("%s %d\n",s.c_str(),count);
-  s=processPythonString(s,count);
-  processString(s,count,lt,it);
+  s=processPythonString(itr,input);
+  processString(itr, lt,it);
     // detect and seprate python
     
       
