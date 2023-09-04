@@ -1,0 +1,15 @@
+
+html:
+    head:
+        something()
+        title:
+            print("SImpLE")
+        
+    body:
+        div:
+            print("this and that")
+            for i in range(12):
+                print(f'<div name="div{i}">{i}</div>')
+        script:
+            alert("this is useless alert")
+        

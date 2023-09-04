@@ -1,0 +1,21 @@
+html lang="en" class="sr":
+  head:
+    title:
+      Lekhit Borole | Developer
+    link rel="shortcut icon" type="image/png" href="assets/favicon.png":
+    link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css":
+    link rel="stylesheet" href="styles.scss":
+    script defer src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js":
+    script async defer src="https://buttons.github.io/buttons.js":
+  body:
+    div id="top":
+    section id="hero" class="jumbotron":
+      div class="container":
+        h1 class="hero-title load-hidden":
+          Hi, my name is <span class="text-color-main">Lekhit Borole</span>
+          <br />
+          I'm the Unknown Developer.
+        p class="hero-cta load-hidden":
+          a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about":
+            Know more
+    script defer type="module" src="index.js":

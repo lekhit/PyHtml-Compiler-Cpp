@@ -1,0 +1,4 @@
+def eh(startindex,lt):
+    i=startindex
+    e=[]
+    re=[]
