@@ -1,8 +1,8 @@
-# HTML Compiler
+# Cpp Compiler
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
-**HTML Compiler** is a powerful tool that allows you to convert HTML files written in a Python-like syntax into runnable HTML, eliminating the need for closing tags in HTML documents. It is built in C++ and also supports embedded Python code, making it a versatile solution for web developers and content creators.
+**Cpp Compiler** is a powerful tool that allows you to convert HTML files written in a Python-like syntax into runnable HTML, eliminating the need for closing tags in HTML documents. It is built in C++ and also supports embedded Python code, making it a versatile solution for web developers and content creators.
 
 ## Features
 
@@ -29,5 +29,40 @@ HTML Compiler functions as a compiler for your HTML files. You can write HTML co
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/yourusername/html-compiler.git
-   cd html-compiler
+   git clone https://github.com/lekhit/Cpp-Compiler.git
+   cd Cpp-Compiler
+   ```
+2. Compile the code with g++:
+   ```bash
+   g++ -std="c++2a" compiler.cpp -o compiler.out
+   ```
+3. Execute the binary ensuring that python3 is present in your system.
+   ```bash
+   ./compiler.out <input.txt> <output.html>
+   ```
+## Results
+The results are provided as <output.html> it is a direct runnable HTML file. Simply run the file on browser.
+
+## Demo
+
+### input file
+```html
+html:
+  head:
+    title:
+      Hello world
+  
+  body:
+    div:
+      demo of using python
+    python:
+      for i in range(10):
+        print(f"""
+        div:
+          item number {i}
+        """)
+    script:
+      alert("welcome to new world");
+```
+### 
+   
