@@ -14,10 +14,11 @@ for(auto i:s){if(i!=' ') break; if(i==' ') c++;}
 return c;
 }
 int CheckTAG(string s){
-  int n=(int)s.size()-1;
-  for(int i=n;i>=0;i--){
+  int n=(int)s.size()-1;int i=n;
+
+ {
     // removing all the trailing spaces
-    while(i>=0 && s[i]==' '){i--;}
+    while(i>=0 ){if(s[i]==' ') i--;else break;  }
     if(s[i]==TERMENATOR) return i;
   }
   return -1;
@@ -50,7 +51,7 @@ return ans;
 }
 string addPadding(string input,bool end=false){
   string toadd="<";
-  if(end) toadd="<\\";
+  if(end) toadd="</";
   
 return toadd+input+">";
 }
@@ -145,14 +146,12 @@ string processIndentaionPython(string s,int pycount){
 
 void processPythonFILE(list<string>::iterator &it,list<string> &input, int pycount){
 ifstream inputfile("pyout.txt");
-cout<<"python not readable"<<endl;
 int cnt=0;
   string s;
   while(getline(inputfile,s)){
     string ans=(processIndentaionPython(s,pycount));
     input.insert(it,ans);
     cnt++;
-    cout<<ans<<endl;
   }
   advance(it,cnt*-1);
   inputfile.close();
@@ -197,15 +196,15 @@ if(CheckTAG(s)!=-1){
 
 
 
-int main(){
+int main(int n , char** args){
 
 
     // Check if Python was initialized successfully
    
     // Finalize the Python interpreter when done
     
-  auto file=freopen("html.text", "r", stdin);
-  auto out_file=freopen("output.txt", "w", stdout);
+  auto file=freopen("html.html", "r", stdin);
+  auto out_file=freopen("output.html", "w", stdout);
   string s;int count=0;
   list<pair<string,int>> lt;
   auto it=lt.begin();

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Developer Portfolio</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include Animate.css for animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Add custom CSS for animations */
+        .animated {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+        }
+
+        .fadeInUp {
+            animation-name: fadeInUp;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-sans">
+    <!-- Navigation -->
+    <nav class="bg-opacity-80 backdrop-blur-md p-4 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-semibold animate__animated animate__fadeInUp">Your Name</h1>
+            <p class="text-lg animate__animated animate__fadeInUp animate__delay-1s">Web Developer</p>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8 p-8 bg-opacity-90 backdrop-blur-md rounded-lg">
+        <h2 class="text-3xl font-semibold animate__animated animate__fadeInUp animate__delay-2s">About Me</h2>
+        <p class="text-gray-200 animate__animated animate__fadeInUp animate__delay-2s">I'm a passionate web developer with a love for creating elegant solutions to complex problems. I have experience in front-end and back-end development using various technologies.</p>
+
+        <h2 class="text-3xl font-semibold mt-8 animate__animated animate__fadeInUp animate__delay-3s">Skills</h2>
+        <ul class="list-disc list-inside text-gray-200 animate__animated animate__fadeInUp animate__delay-3s">
+            <li>HTML/CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
+            <li>SQL/NoSQL Databases</li>
+        </ul>
+
+        <h2 class="text-3xl font-semibold mt-8 animate__animated animate__fadeInUp animate__delay-4s">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate__animated animate__fadeInUp animate__delay-4s">
+            <!-- Project Card 1 -->
+            <div class="bg-opacity-80 backdrop-blur-md p-6 rounded-lg transition-transform transform hover:scale-105 hover:bg-opacity-100">
+                <h3 class="text-2xl font-semibold">Project 1</h3>
+                <p class="text-gray-200">Description of Project 1.</p>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-opacity-80 backdrop-blur-md p-6 rounded-lg transition-transform transform hover:scale-105 hover:bg-opacity-100">
+                <h3 class="text-2xl font-semibold">Project 2</h3>
+                <p class="text-gray-200">Description of Project 2.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-opacity-80 backdrop-blur-md p-4 text-center mt-8">
+        <p class="text-gray-300">&copy; 2023 Your Name</p>
+    </footer>
+</body>
+
+</html>
