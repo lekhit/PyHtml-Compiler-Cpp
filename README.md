@@ -2,6 +2,12 @@
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
+ ## Image speaks louder than words
+ 
+   ![Screenshot 2023-09-05 at 1 35 16 AM](https://github.com/lekhit/Cpp-Compiler/assets/82832791/efe0a3a2-9c4c-479d-a16f-ce30dafe3111)
+
+
+
 **Cpp Compiler** is a powerful tool that allows you to convert HTML files written in a Python-like syntax into runnable HTML, eliminating the need for closing tags in HTML documents. It is built in C++ and also supports embedded Python code, making it a versatile solution for web developers and content creators.
 
 ## Features
@@ -44,25 +50,72 @@ HTML Compiler functions as a compiler for your HTML files. You can write HTML co
 The results are provided as <output.html> it is a direct runnable HTML file. Simply run the file on browser.
 
 ## Demo
-
-### input file
+### Hello world (Basic)
+> Input File
+```html
+html:
+    head:
+        title:
+            "SImpLE"
+    body:
+        div class="hello":
+            "hello world"
+        script:
+            alert("this is useless alert")
+```
+> Output File
+```html
+<html>
+<head>
+<title>
+            "SImpLE"
+</title>
+</head>
+<body>
+<div class="hello">
+            "hello world"
+</div>
+<script>
+            alert("this is useless alert")
+</script>
+</body>
+</html>
+```
+### Using the Python TAG
+> Input File
 ```html
 html:
   head:
     title:
       Hello world
-  
+    link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet":
   body:
-    div:
-      demo of using python
-    python:
-      for i in range(10):
-        print(f"""
+    div class=" h-screen flex  mx-auto px-4 ":
+      div class="mx-16 h-full grid grid-cols-1 gap-4 items-center":
         div:
-          item number {i}
-        """)
+          h1 class=" text-6xl font-bold text-gray-800":
+            Hi, my name is 
+              span class=" inline text-green-300":
+                Lekhit Borole
+          p class="mt-3 text-5xl text-gray-800 ":
+            Turning Code into Solutions, One Line at a Time.
+          div class="mt-7 grid gap-3 w-full sm:inline-flex":
+            a class="   bg-blue-600 text-sm lg:text-base text-white py-3 px-4 font-medium rounded-md" href="#":
+              Know More
+            a class="  text-sm py-3 px-4  lg:text-base  border shadow-sm font-medium rounded-md " href="#":
+              Let's Connect
+    div class="grid grid-cols-3 gap-4 m-8 ":
+      python:
+        projects=['Book-recommendation Backend','Book-recommendation Frontend','Cpp-Compiler']
+        for item in projects:
+          print(f"""
+          div class="w-[300px] p-4 h-32 rounded text-center border text-2xl text-gray-800 font-medium ":
+            {item}
+            """)
     script:
-      alert("welcome to new world");
+      alert('welcome to a new way')
 ```
-### 
-   
+> Output
+
+   ![Screenshot 2023-09-05 at 1 35 16 AM](https://github.com/lekhit/Cpp-Compiler/assets/82832791/efe0a3a2-9c4c-479d-a16f-ce30dafe3111)
+
