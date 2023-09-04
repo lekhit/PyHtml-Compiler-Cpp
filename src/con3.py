@@ -111,7 +111,7 @@ for line in lt:
         line=line.replace('"','\"')
         line=line.replace("'","\'")
         line=line.replace("\n","")
-        lt[index]=f'print(\'{line}\')'
+        lt[index]=f'print("""{line}""")'
     else:
         lt[lt.index(line)]=line[spaces+4:]
         

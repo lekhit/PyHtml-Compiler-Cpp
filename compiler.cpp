@@ -91,7 +91,7 @@ int runPY(){
 void processString(list<string>::iterator itr, list<pair<string,int>> &lt,list<pair<string,int>>::iterator &it){
   string s=(*itr);
  int  count=getLeftCount(s);
-  if(CheckTAG(s)!=-1){
+
         //means we are deaing with tag
         auto startTag=addPadding( getCompleteStartTag(s));
         auto endTag=addPadding(getTAG(s),true);
@@ -121,12 +121,10 @@ void processString(list<string>::iterator itr, list<pair<string,int>> &lt,list<p
         lt.insert(it,{startTag,count});
         lt.insert(it,{endTag,count});
         advance(it,-1);
-      }
-      else{
-        // simple line is recieved and we will add it as it is
-        lt.insert(it,{s,count});
-      }
+
+      
 }
+
 void makePYrunFILE(vector<string> v,int pyindent){
    ofstream myfile;
 myfile.open("pyrun.py",ios::out|ios::trunc);
@@ -166,8 +164,7 @@ vector<string> pyLines;
       int pyCount=count;
       int pyindent=INT_MAX;
 
-if(CheckTAG(s)!=-1){
-      if(py=="python"){
+
        
         //cout<<py;
         // getline(cin,py);
@@ -188,9 +185,7 @@ if(CheckTAG(s)!=-1){
         processPythonFILE(it,input,pyCount);
 
       }
-      }
-
-    }
+      
     return s;
     }
 
@@ -220,8 +215,18 @@ for(auto itr=input.begin();itr!=input.end();itr++){
     // getting indentaion count
     //s=sanitizeLine(s);
     //printf("%s %d\n",s.c_str(),count);
-  s=processPythonString(itr,input);
-  processString(itr, lt,it);
+    if(CheckTAG(s)!=-1){
+      string Tag=getTAG(s);
+      if(Tag=="python"){
+  processPythonString(itr,input);}
+  else if(Tag=="global"){
+
+  }
+  processString(itr, lt,it);}
+  else{
+        // simple line is recieved and we will add it as it is
+        lt.insert(it,{s,count});
+      }
     // detect and seprate python
     
       
