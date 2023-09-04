@@ -1,4 +1,4 @@
-# Cpp Compiler
+# PyHtml-Compiler-Cpp
 
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
@@ -8,7 +8,7 @@
 
 
 
-**Cpp Compiler** is a powerful tool that allows you to convert HTML files written in a Python-like syntax into runnable HTML, eliminating the need for closing tags in HTML documents. It is built in C++ and also supports embedded Python code, making it a versatile solution for web developers and content creators.
+**PyHtml-Compiler-Cpp** is a powerful tool that allows you to convert HTML files written in a Python-like syntax into runnable HTML, eliminating the need for closing tags in HTML documents. It is built in C++ and also supports embedded Python code, making it a versatile solution for web developers and content creators.
 
 ## Features
 
